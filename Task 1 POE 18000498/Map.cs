@@ -15,7 +15,7 @@ namespace Task_1_POE_18000498
 
         
         
-        public List<Unit> units = new List<Unit>();
+        public List<Unit> units = new List<Unit>(); //declaring the lists that will be used to store info
         public List<Unit> rangedUnits = new List<Unit>();
         public List<Unit> meleeUnits = new List<Unit>();
         public buildings[,] buildingMap = new buildings[20, 20];
@@ -26,7 +26,7 @@ namespace Task_1_POE_18000498
         public Unit[,] uniMap = new Unit [20, 20];
  
 
-        Random Rd = new Random();
+        Random Rd = new Random(); // random for random rolls etc
 
         int BuildingNum;
 
@@ -39,7 +39,7 @@ namespace Task_1_POE_18000498
         public void GenerateBattleField() // method to allow the random number of units, including the ranged and the melee units
         {
 
-            for (int i = 0; i < BuildingNum; i++)
+            for (int i = 0; i < BuildingNum; i++) //recource building code and added it to each faction where necessary
             {
                 if (Rd.Next(0, 2) == 0)
                 {
@@ -61,7 +61,7 @@ namespace Task_1_POE_18000498
                     }
 
                     FactoryBuildings Barrack = new FactoryBuildings(0, 0, 100, Faction.Overwatch, "$$", Rd.Next(3, 10), UnitName);
-                    Barracks.Add(Barrack);
+                    Barracks.Add(Barrack); //same thing for factory  buildings
                 }
             }
             for (int i = 0; i < BuildingNum; i++)
@@ -110,7 +110,7 @@ namespace Task_1_POE_18000498
                 buildings.Add(u);
             }
 
-            foreach (FactoryBuildings u in Barracks)
+            foreach (FactoryBuildings u in Barracks) //gave the factory buildings positions etc
             {
                 for (int i = 0; i < Barracks.Count; i++)
                 {
